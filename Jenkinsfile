@@ -5,7 +5,7 @@ pipeline {
         stage('Deploy To Kubernetes') {
             steps {
                  withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'sowmya.k8s.local', contextName: '', credentialsId: 'kubetl', namespace: 'webapps', serverUrl: '']]) {
-                    sh "kubectl apply -f deployment.yml"
+                    sh "kubectl apply -f deployment.yaml"
                     
                 }
             }
